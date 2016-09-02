@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>Blog made by Google Spreadsheet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+</head>
+<body id="app">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          Blog made by Google Spreadsheet
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://surge.sh/">Hosted on surge.sh</a></li>
+          <li><a href="http://vuejs.org">Made with Vue.js</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1BNkfLnH03mvA_zWubiqsPybpIhednjDHoqCIWmKLtYQ/edit#gid=0">Based on Google Spreadsheet</a></li>
+          <li><a href="https://spreadsheets.google.com/feeds/list/1BNkfLnH03mvA_zWubiqsPybpIhednjDHoqCIWmKLtYQ/od6/public/basic?alt=json">Get Google Spreadsheet JSON</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div v-for="post in posts" class="row">
+      <div class="col-sm-8">
+        <h3>{{post.title.$t}}</h1>
+        <p>{{{post.content.$t | content}}}</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
